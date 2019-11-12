@@ -4,12 +4,16 @@
     <meta charset="utf-8">
     <title>Karma Tracker</title>
     <center>
-      <h1>Karma Tracker</h1>
+      <h1 class="title">Karma Tracker</h1>
+      <br>
+      <input class="resetBtn" type="image" src="restartIcon.png" onclick="reset()">
     </center>
   </head>
   <body class="body" onload="load()">
     <center>
-      <input id="karmaCounter" type="text" disabled=true>
+      <div class="karmaCounterCont">
+        <p id="karmaCounter" class="karmaCounter">0</p>
+      </div>
       <br>
       <br>
       <button class="plusBtn" onclick="add()">+</button>
@@ -18,50 +22,109 @@
   </body>
 
   <script>
-    getKarma = document.getElementById("karmaCounter");
+    var getKarma = document.getElementById("karmaCounter");
 
     function save() {
-      localStorage.setItem('karma', getKarma.value);
+      localStorage.setItem('karma', getKarma.innerHTML);
     }
 
     function load() {
-      getKarma.value = localStorage.getItem("karma");
+      getKarma.innerHTML = localStorage.getItem("karma");
     }
 
     function add() {
-      getKarma.value ++;
+      getKarma.innerHTML ++;
       save();
     }
 
     function minus() {
-      getKarma.value --;
+      getKarma.innerHTML --;
       save();
+    }
+
+    function reset() {
+      var promptCheck = prompt("Are you sure you want to reset y/n");
+      if (promptCheck == "y") {
+        localStorage.setItem('karma', 0);
+        load();
+      }
+      else {
+        //Do Nothing
+      }
     }
   </script>
 
   <style>
+    .title {
+      display: inline;
+    }
+
     .body {
       background-color: grey;
     }
 
-    .plusBtn {
-      height: 100px;
-      width: 100px;
+    .karmaCounterCont {
+      height: 10px;
+      width: 30px;
+      background-color: none;
+    }
+
+    .karmaCounter {
+      font-size:20px;
+      height: 1px;
+    }
+
+    .resetBtn {
+      height: 50px;
+      width: 45px;
+      float: right;
       display: inline-block;
-      font-size: 80px;
+    }
+
+    .plusBtn {
+      display: inline-block;
+      height: 100px;
+      width: 105px;
       text-align: center;
-      background-color: green;
-      border-color: green;
+      font-size: 50px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      outline: none;
+      color: white;
+      background-color: #4CAF50;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 9px #999;
+    }
+
+    .plusBtn:active {
+      background-color: #3e8e41;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
     }
 
     .minusBtn {
-      height: 100px;
-      width: 100px;
       display: inline-block;
-      font-size: 80px;
+      height: 100px;
+      width: 105px;
       text-align: center;
-      background-color: red;
-      border-color: red;
+      font-size: 50px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      outline: none;
+      color: white;
+      background-color: #eb3636;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 9px #999;
+    }
+
+    .minusBtn:active {
+      background-color: #c22121;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
     }
   </style>
 </html>
