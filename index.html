@@ -7,7 +7,61 @@
       <h1>Karma Tracker</h1>
     </center>
   </head>
-  <body>
-    <button>+</button>
+  <body class="body" onload="load()">
+    <center>
+      <input id="karmaCounter" type="text" disabled=true>
+      <br>
+      <br>
+      <button class="plusBtn" onclick="add()">+</button>
+      <button class="minusBtn" onclick="minus()">-</button>
+    </center>
   </body>
+
+  <script>
+    getKarma = document.getElementById("karmaCounter");
+
+    function save() {
+      localStorage.setItem('karma', getKarma.value);
+    }
+
+    function load() {
+      getKarma.value = localStorage.getItem("karma");
+    }
+
+    function add() {
+      getKarma.value ++;
+      save();
+    }
+
+    function minus() {
+      getKarma.value --;
+      save();
+    }
+  </script>
+
+  <style>
+    .body {
+      background-color: grey;
+    }
+
+    .plusBtn {
+      height: 100px;
+      width: 100px;
+      display: inline-block;
+      font-size: 80px;
+      text-align: center;
+      background-color: green;
+      border-color: green;
+    }
+
+    .minusBtn {
+      height: 100px;
+      width: 100px;
+      display: inline-block;
+      font-size: 80px;
+      text-align: center;
+      background-color: red;
+      border-color: red;
+    }
+  </style>
 </html>
