@@ -1,0 +1,108 @@
+.title {
+  display: inline;
+  color: black;
+}
+
+.body {
+  background-color: grey;
+}
+
+.karmaCounterCont {
+  height: 10px;
+  width: 30px;
+  background-color: none;
+}
+
+.karmaCounter {
+  font-size:20px;
+  height: 1px;
+}
+
+.resetBtn {
+  height: 50px;
+  width: 45px;
+  float: right;
+  display: inline-block;
+}
+
+.plusBtn {
+  display: inline-block;
+  height: 100px;
+  width: 105px;
+  text-align: center;
+  font-size: 50px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: white;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.plusBtn:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.minusBtn {
+  display: inline-block;
+  height: 100px;
+  width: 105px;
+  text-align: center;
+  font-size: 50px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: white;
+  background-color: #eb3636;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.minusBtn:active {
+  background-color: #c22121;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.spacer {
+  height: 25px;
+  width: 0px;
+  background-color: blue;
+}
+
+.karmaStatus {
+  height: 50px;
+  width: 50px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.lilSpacer {
+  height: 15px;
+}
+
+.shoppingBtn {
+  height: 50px;
+  width: 50px;
+  float: left;
+  display: inline-block;
+}
+
+.shoppingList {
+  visibility: hidden;
+  background-color: none;
+  width: 250px;
+}
+
+.colorOptions {
+  float: right;
+  visibility: hidden;
+}

@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <link rel="stylesheet" href="css/main.css">
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karma Tracker</title>
     <center>
-      <h1 class="title">Karma Tracker</h1>
+      <h1 class="title" id="title">Karma Tracker</h1>
       <br>
-      <input class="resetBtn" type="image" src="restartIcon.png" onclick="reset()">
+      <input class="resetBtn" type="image" src="icons/restartIcon.png" onclick="reset()">
+      <input class="shoppingBtn" type="image" src="icons/shoppingCartIcon.png" onclick="soon()">
     </center>
   </head>
+
   <body class="body" onload="load()">
     <center>
       <div class="karmaCounterCont">
@@ -18,113 +22,37 @@
       <br>
       <button class="plusBtn" onclick="add()">+</button>
       <button class="minusBtn" onclick="minus()">-</button>
+      <br>
+      <br>
+      <div class="spacer"></div>
+      <span id="karmaStatus" class="karmaStatus"></span>
+      <br>
+
+
+      <div class="shoppingList" id="shoppingList">
+        <p>Shopping</p>
+        <br>
+        <button class="colorBtn" onclick="showColorOptions()">Colors</button>
+        <div class="colorOptions" id="colorOptions">
+
+        </div>
+      </div>
+
+
+
     </center>
   </body>
 
   <script>
-    var getKarma = document.getElementById("karmaCounter");
-
-    function save() {
-      localStorage.setItem('karma', getKarma.innerHTML);
-    }
-
-    function load() {
-      getKarma.innerHTML = localStorage.getItem("karma");
-    }
-
-    function add() {
-      getKarma.innerHTML ++;
-      save();
-    }
-
-    function minus() {
-      getKarma.innerHTML --;
-      save();
-    }
-
-    function reset() {
-      var promptCheck = prompt("Are you sure you want to reset y/n");
-      if (promptCheck == "y") {
-        localStorage.setItem('karma', 0);
-        load();
-      }
-      else {
-        //Do Nothing
-      }
+    function soon() {
+      alert("Coming Soon");
     }
   </script>
 
+  <script src="js/main.js"></script>
+
   <style>
-    .title {
-      display: inline;
-    }
 
-    .body {
-      background-color: grey;
-    }
-
-    .karmaCounterCont {
-      height: 10px;
-      width: 30px;
-      background-color: none;
-    }
-
-    .karmaCounter {
-      font-size:20px;
-      height: 1px;
-    }
-
-    .resetBtn {
-      height: 50px;
-      width: 45px;
-      float: right;
-      display: inline-block;
-    }
-
-    .plusBtn {
-      display: inline-block;
-      height: 100px;
-      width: 105px;
-      text-align: center;
-      font-size: 50px;
-      cursor: pointer;
-      text-align: center;
-      text-decoration: none;
-      outline: none;
-      color: white;
-      background-color: #4CAF50;
-      border: none;
-      border-radius: 15px;
-      box-shadow: 0 9px #999;
-    }
-
-    .plusBtn:active {
-      background-color: #3e8e41;
-      box-shadow: 0 5px #666;
-      transform: translateY(4px);
-    }
-
-    .minusBtn {
-      display: inline-block;
-      height: 100px;
-      width: 105px;
-      text-align: center;
-      font-size: 50px;
-      cursor: pointer;
-      text-align: center;
-      text-decoration: none;
-      outline: none;
-      color: white;
-      background-color: #eb3636;
-      border: none;
-      border-radius: 15px;
-      box-shadow: 0 9px #999;
-    }
-
-    .minusBtn:active {
-      background-color: #c22121;
-      box-shadow: 0 5px #666;
-      transform: translateY(4px);
-    }
   </style>
+
 </html>
