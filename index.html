@@ -9,7 +9,7 @@
       <h1 class="title" id="title">Karma Tracker</h1>
       <br>
       <input class="resetBtn" type="image" src="icons/restartIcon.png" onclick="reset()">
-      <input class="shoppingBtn" type="image" src="icons/shoppingCartIcon.png" onclick="soon()">
+      <input class="shoppingBtn" type="image" src="icons/handIcon.png" onclick="showShopping()">
     </center>
   </head>
 
@@ -27,32 +27,37 @@
       <div class="spacer"></div>
       <span id="karmaStatus" class="karmaStatus"></span>
       <br>
-
-
       <div class="shoppingList" id="shoppingList">
-        <p>Shopping</p>
+        <p class="shoppingTitle">Shopping</p>
         <br>
         <button class="colorBtn" onclick="showColorOptions()">Colors</button>
         <div class="colorOptions" id="colorOptions">
+          <button id="#2e7eff" value="150" name="Blue" title="locked" onclick="buy(this.id,this.value,this.name,this.title)">Blue - 150</button>
 
+          <div class="lilSpacer"></div>
+          <button id="#cf82ff" value="200" name="Purple" onclick="buy(this.id,this.value,this.name)">Purple - 200</button>
+
+          <div class="lilSpacer"></div>
+          <button id="orange" value="250" name="Orange" onclick="buy(this.id,this.value,this.name)">Orange - 250</button>
+
+          <div class="lilSpacer"></div>
+          <button id="#63ff52" value="250" name="Green" onclick="buy(this.id,this.value,this.name)">Green - 250</button>
+
+          <div class="lilSpacer"></div>
+          <button id="rainbow" value="500" name="Rainbow" onclick="buy(this.id,this.value,this.name)" disabled="true"> Rainbow - 500</button>
         </div>
       </div>
-
-
-
     </center>
   </body>
 
   <script>
-    function soon() {
-      alert("Coming Soon");
-    }
+
   </script>
 
-  <script src="js/main.js"></script>
-
   <style>
-
+  
   </style>
+
+  <script src="js/main.js"></script>
 
 </html>

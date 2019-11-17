@@ -1,10 +1,10 @@
 .title {
   display: inline;
-  color: black;
+  color: white;
 }
 
 .body {
-  background-color: grey;
+  background-color: black;
 }
 
 .karmaCounterCont {
@@ -16,6 +16,11 @@
 .karmaCounter {
   font-size:20px;
   height: 1px;
+  color: white;
+}
+
+.shoppingTitle {
+  color: white;
 }
 
 .resetBtn {
