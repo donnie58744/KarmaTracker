@@ -139,6 +139,14 @@ function buy(colorID, colorCost, colorName, state) {
     document.getElementById(colorID).innerHTML = colorName;
     document.getElementById(colorID).title = "unlocked";
 
+	// Change Title Color
+	if (colorID == 'rainbow') {
+		alert('Rainbow');
+	}
+	else {
+		getTitle.style.color = colorID;
+	}
+
     // Save Bought Colors
     if (colorName == "Blue") {
       localStorage.setItem("blueState", "unlocked");
@@ -160,16 +168,8 @@ function buy(colorID, colorCost, colorName, state) {
   // If not enough karma then alert "Not Enough"
   else {
     alert('Not Enough');
-    document.getElementById(colorID).title = "locked";
+    
     console.log(state);
-  }
-
-  // Change Title Color
-  if (colorID == 'rainbow') {
-    alert('Rainbow');
-  }
-  else {
-      getTitle.style.color = colorID;
   }
 
   // Save and Load
