@@ -24,6 +24,7 @@ function load() {
 }
 
 function updateColorStatus() {
+  //Update The Karma Circle Color
   if (getKarma.value < 0) {
     karmaStatus.style.backgroundColor = "red";
   }
