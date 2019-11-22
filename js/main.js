@@ -70,6 +70,27 @@ function getBoughtColors() {
     green.innerHTML = "Green";
     green.value = 0;
   }
+
+  // Check If Color Isnt Bought
+  if (getBlue == "locked") {
+    blue.innerHTML = "Blue - 150";
+    blue.value = 150;
+  }
+
+  if (getPurple == "locked") {
+    purple.innerHTML = "Purple - 200";
+    purple.value = 200;
+  }
+
+  if (getOrange == "locked") {
+    orange.innerHTML = "Orange - 250";
+    orange.value = 250;
+  }
+
+  if (getGreen == "locked") {
+    green.innerHTML = "Green - 250";
+    green.value = 150;
+  }
 }
 
 function save() {
@@ -94,6 +115,12 @@ function reset() {
   var promptCheck = prompt("Are you sure you want to reset y/n");
   if (promptCheck == "y") {
     localStorage.setItem('karma', 0);
+    localStorage.setItem("titleColor", "white");
+
+    localStorage.setItem("blueState", "locked");
+    localStorage.setItem("purpleState", "locked");
+    localStorage.setItem("orangeState", "locked");
+    localStorage.setItem("greenState", "locked");
     load();
   }
   else {
@@ -111,6 +138,8 @@ function showShopping() {
   else if (sListOF == 2) {
     shoppingList.style.visibility = "hidden";
     sListOF = 0;
+    colorOptions.style.visibility = "hidden";
+    cOptions = 0;
   }
 }
 
@@ -130,14 +159,12 @@ function showColorOptions() {
 function buy(colorID, colorCost, colorName, state) {
 
   colorCostInt = parseInt(colorCost, 10);
-  console.log(state);
 
   // Remove The Amount Of Karma
-  if (getKarma.value > colorCostInt) {
+  if (getKarma.value >= colorCostInt) {
     getKarma.value -= colorCostInt;
     document.getElementById(colorID).value = 0;
     document.getElementById(colorID).innerHTML = colorName;
-    document.getElementById(colorID).title = "unlocked";
 
     // Save Bought Colors
     if (colorName == "Blue") {
@@ -155,21 +182,14 @@ function buy(colorID, colorCost, colorName, state) {
     if (colorName == "Green") {
       localStorage.setItem("greenState", "unlocked");
     }
+
+    // Change The Title Color
+    getTitle.style.color = colorID;
   }
 
   // If not enough karma then alert "Not Enough"
   else {
     alert('Not Enough');
-    document.getElementById(colorID).title = "locked";
-    console.log(state);
-  }
-
-  // Change Title Color
-  if (colorID == 'rainbow') {
-    alert('Rainbow');
-  }
-  else {
-      getTitle.style.color = colorID;
   }
 
   // Save and Load
