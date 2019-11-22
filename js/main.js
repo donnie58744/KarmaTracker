@@ -166,6 +166,14 @@ function buy(colorID, colorCost, colorName, state) {
     document.getElementById(colorID).value = 0;
     document.getElementById(colorID).innerHTML = colorName;
 
+	// Change Title Color
+	if (colorID == 'rainbow') {
+		alert('Rainbow');
+	}
+	else {
+		getTitle.style.color = colorID;
+	}
+
     // Save Bought Colors
     if (colorName == "Blue") {
       localStorage.setItem("blueState", "unlocked");
