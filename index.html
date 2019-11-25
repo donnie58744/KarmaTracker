@@ -1,69 +1,91 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+
+<head>
     <link rel="stylesheet" href="css/main.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karma Tracker</title>
     <center>
-      <h1 class="title" id="title">Karma Tracker</h1>
-      <br>
-      <input class="resetBtn" type="image" src="icons/restartIcon.png" onclick="reset()">
-      <input class="shoppingBtn" type="image" src="icons/handIcon.png" onclick="showShopping()">
-    </center>
-  </head>
-
-  <body class="body" onload="load()">
-    <center>
-      <div class="karmaCounterCont">
-        <p id="karmaCounter" class="karmaCounter">0</p>
-      </div>
-      <br>
-      <br>
-      <button class="plusBtn" onclick="add()">+</button>
-      <button class="minusBtn" onclick="minus()">-</button>
-      <br>
-      <br>
-      <div class="spacer"></div>
-      <span id="karmaStatus" class="karmaStatus"></span>
-      <br>
-
-
-      <div class="shoppingList" id="shoppingList">
-        <p class="shoppingTitle">Shopping</p>
+        <h1 class="title" id="title">Karma Tracker</h1>
         <br>
-        <button class="colorBtn" onclick="showTitleColorOptions()">Title Colors</button>
-
-
-        <div class="titleColorOptions" id="titleColorOptions">
-          <button id="#2e7eff" value="150" name="Blue" title="" onclick="buy(this.id,this.value,this.name,this.title)">Blue - 150</button>
-
-          <div class="lilSpacer"></div>
-          <button id="#cf82ff" value="200" name="Purple" title="" onclick="buy(this.id,this.value,this.name,this.title)">Purple - 200</button>
-
-          <div class="lilSpacer"></div>
-          <button id="orange" value="250" name="Orange" title="" onclick="buy(this.id,this.value,this.name,this.title)">Orange - 250</button>
-
-          <div class="lilSpacer"></div>
-          <button id="#63ff52" value="250" name="Green" title="" onclick="buy(this.id,this.value,this.name,this.title)">Green - 250</button>
-
-          <div class="lilSpacer"></div>
-          <button id="rainbow" value="500" name="Rainbow" title="" onclick="buy(this.id,this.value,this.name,this.title)" disabled="true"> Rainbow - 500</button>
-        </div>
-
-
-      </div>
+        <input class="resetBtn" type="image" src="icons/restartIcon.png" onclick="reset()">
+        <input class="shoppingBtn" type="image" src="icons/handIcon.png" onclick="showShopping()">
     </center>
-  </body>
+</head>
 
-  <script>
+<body class="body" onload="load()">
+    <center>
+        <div class="karmaCounterCont">
+            <p id="karmaCounter" class="karmaCounter">0</p>
+        </div>
+        <br>
+        <br>
+        <button class="plusBtn" onclick="add()">+</button>
+        <button class="minusBtn" onclick="minus()">-</button>
+        <br>
+        <br>
+        <div class="spacer"></div>
+        <span id="karmaStatus" class="karmaStatus"></span>
+        <br>
 
-  </script>
 
-  <style>
+        <div class="shoppingList" id="shoppingList">
+            <p class="shoppingTitle">Shopping</p>
+            <br>
 
-  </style>
+            <div class="dropdown" onclick="showTitleColors()">
+                <button class="titleColorOptions">Title Colors</button>
+                <div id="titleColors" class="dropdown-content">
+                    <button id="#2e7eff" value="150" name="Blue" title="" lang="title" class="blueButton" onclick="buy(this.id,this.value,this.name,this.title,this.lang)">Blue - 150</button>
 
-  <script src="js/main.js"></script>
+                    <div class="lilSpacer"></div>
+                    <button id="#cf82ff" value="200" name="Purple" title="" lang="title" class="purpleButton" onclick="buy(this.id,this.value,this.name,this.title,this.lang)">Purple - 200</button>
+
+                    <div class="lilSpacer"></div>
+                    <button id="orange" value="250" name="Orange" title="" lang="title" class="orangeButton" onclick="buy(this.id,this.value,this.name,this.title,this.lang)">Orange - 250</button>
+
+                    <div class="lilSpacer"></div>
+                    <button id="#63ff52" value="250" name="Green" title="" lang="title" class="greenButton" onclick="buy(this.id,this.value,this.name,this.title,this.lang)">Green - 250</button>
+
+                    <div class="lilSpacer"></div>
+                    <button id="rainbow" value="500" name="Rainbow" title="" lang="title" class="rainbowButton" onclick="buy(this.id,this.value,this.name,this.title,this.lang)" disabled="true"> Rainbow - 500</button>
+                </div>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="dropdown" onclick="showCounterColors()">
+                <button class="counterColorOptions">Counter Colors</button>
+                <div id="counterColors" class="dropdown-content">
+                    <button id="#2e7eff" value="150" name="Blue" title="" lang="counter" class="blueButton" onclick="buy(this.id,this.value,this.name,this.title,this.lang)">Blue - 150</button>
+
+                    <div class="lilSpacer"></div>
+                    <button id="#cf82ff" value="200" name="Purple" title="" lang="counter" class="purpleButton" onclick="buy(this.id,this.value,this.name,this.title,this.lang)">Purple - 200</button>
+
+                    <div class="lilSpacer"></div>
+                    <button id="orange" value="250" name="Orange" title="" lang="counter" class="orangeButton" onclick="buy(this.id,this.value,this.name,this.title,this.lang)">Orange - 250</button>
+
+                    <div class="lilSpacer"></div>
+                    <button id="#63ff52" value="250" name="Green" title="" lang="counter" class="greenButton" onclick="buy(this.id,this.value,this.name,this.title,this.lang)">Green - 250</button>
+
+                    <div class="lilSpacer"></div>
+                    <button id="rainbow" value="500" name="Rainbow" title="" lang="counter" class="rainbowButton" onclick="buy(this.id,this.value,this.name,this.title,this.lang)" disabled="true"> Rainbow - 500</button>
+                </div>
+            </div>
+        </div>
+    </center>
+</body>
+
+<script>
+
+</script>
+
+<style>
+
+</style>
+
+<script src="js/main.js"></script>
 
 </html>
