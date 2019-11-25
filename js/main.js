@@ -3,7 +3,7 @@ var getKarma = document.getElementById("karmaCounter");
 var getTitle = document.getElementById("title");
 var karmaStatus = document.getElementById("karmaStatus");
 var shoppingList = document.getElementById("shoppingList");
-var colorOptions = document.getElementById("colorOptions");
+var titleColorOptions = document.getElementById("titleColorOptions");
 
 var sListOF = 0;
 var cOptions = 0;
@@ -139,20 +139,20 @@ function showShopping() {
   else if (sListOF == 2) {
     shoppingList.style.visibility = "hidden";
     sListOF = 0;
-    colorOptions.style.visibility = "hidden";
+    titleColorOptions.style.visibility = "hidden";
     cOptions = 0;
   }
 }
 
-function showColorOptions() {
+function showTitleColorOptions() {
   cOptions += 1;
   console.log(cOptions);
   if (cOptions == 1) {
-    colorOptions.style.visibility = "visible";
+    titleColorOptions.style.visibility = "visible";
   }
 
   else if (cOptions == 2) {
-    colorOptions.style.visibility = "hidden";
+    titleColorOptions.style.visibility = "hidden";
     cOptions = 0;
   }
 }

@@ -27,11 +27,15 @@
       <div class="spacer"></div>
       <span id="karmaStatus" class="karmaStatus"></span>
       <br>
+
+
       <div class="shoppingList" id="shoppingList">
         <p class="shoppingTitle">Shopping</p>
         <br>
-        <button class="colorBtn" onclick="showColorOptions()">Colors</button>
-        <div class="colorOptions" id="colorOptions">
+        <button class="colorBtn" onclick="showTitleColorOptions()">Title Colors</button>
+
+
+        <div class="titleColorOptions" id="titleColorOptions">
           <button id="#2e7eff" value="150" name="Blue" title="" onclick="buy(this.id,this.value,this.name,this.title)">Blue - 150</button>
 
           <div class="lilSpacer"></div>
@@ -46,6 +50,8 @@
           <div class="lilSpacer"></div>
           <button id="rainbow" value="500" name="Rainbow" title="" onclick="buy(this.id,this.value,this.name,this.title)" disabled="true"> Rainbow - 500</button>
         </div>
+
+
       </div>
     </center>
   </body>
